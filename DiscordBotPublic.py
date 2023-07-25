@@ -1241,5 +1241,11 @@ async def hello(m):
 # ctx can actually be anything, its a variable (as shown in the hello command)
 # ctx is the context of the command, storing stuff like the channel it was called in, the user who called it among other things
 
+#Gets the token from a text file. Needed to run the bot
+def getToken():
+    if os.path.exists("token.txt"):
+        return open("token.txt", "r").readline()
+    else:
+        print("No token found, please provide a token.txt with a valid Discord bot token")
 # for security purposes, the token is hidden. Use your own bot token to test
-client.run("")
+client.run(getToken())
