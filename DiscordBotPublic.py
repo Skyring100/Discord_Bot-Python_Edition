@@ -1,3 +1,5 @@
+import sys
+
 import discord
 from discord.ext import commands
 from discord.utils import get
@@ -1247,7 +1249,9 @@ def getToken():
         return open("token.txt", "r").readline()
     else:
         print("No token found, please provide a token.txt with a valid Discord bot token")
+        sys.exit()
 
 def __main__():
     # for security purposes, the token is hidden. Use your own bot token to test
     client.run(getToken())
+__main__()
