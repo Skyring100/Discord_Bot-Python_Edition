@@ -1246,7 +1246,7 @@ async def hello(m):
 #Gets the token from a text file. Needed to run the bot
 def getToken():
     if os.path.exists("token.txt"):
-        return open("token.txt", "r").readline()
+        return open("token.txt", "r").readline().strip()
     else:
         print("No token found, please provide a token.txt with a valid Discord bot token")
         sys.exit()
